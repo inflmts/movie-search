@@ -1,67 +1,39 @@
-# COP3530 - Project 3
+# Movie Search
 
-Group 83 - Sean Muller, Isaac Zeng, Daniel Li (MZL)
+- Name: Project 3
+- Course: COP3530, University of Florida
+- Authors: Group 83 (Sean Muller, Isaac Zeng, Daniel Li)
+- Date: April 2025
 
-**Project Title:** Movie Search
+## Build Instructions
 
-- **Problem:**
-  Searching for movies manually is difficult, so we are looking for a way to do
-  this automatically.
+This project uses the
+[IMDb Non-Commercial Datasets](https://developer.imdb.com/non-commercial-datasets/).
+The data can be found at <https://datasets.imdbws.com>.
 
-- **Motivation:**
-  A person may want to find a movie of a specific genre of a different year
-  because they might want to find a movie that is different from what is
-  released in the current year that gives a different feeling or experience.
+To get started, download and extract
+<https://datasets.imdbws.com/title.basics.tsv.gz>
+to a file named `movies.tsv` in the current directory:
 
-- **Features:**
-  The program will return a list of all movies in the dataset that match the
-  user’s input criteria, which may include specifications for:
+```
+curl -Lf https://datasets.imdbws.com/title.basics.tsv.gz | gunzip > movies.tsv
+```
 
-  - Year (specific value or a range).
-  - Genre (one, any in a set, or all in a set).
-  - Runtime (a range).
-  - Others may be added in the future.
+### CMake
 
-- **Data:**
-  IMDb Non-Commercial Datasets
+_TODO - someone with CMake fill this out_
 
-  - <https://developer.imdb.com/non-commercial-datasets/> (documentation)
-  - <https://datasets.imdbws.com> (downloads)
-  - <https://datasets.imdbws.com/title.basics.tsv.gz> (basic movie information)
+### Meson
 
-- **Tools:**
+This project requires a C++17 compiler and the Qt5 development libraries.
 
-  - Programming language: C++
-  - Test framework: [Catch2](https://github.com/catchorg/Catch2/tree/devel/docs)
-  - UI: [Qt](https://doc.qt.io)
+```
+meson setup build
+ninja -C build
+```
 
-- **Visuals:**
+Run with:
 
-  ```
-  +------------------+
-  | TITLE OF PROJECT |
-  |                  |
-  | Parameters...    |
-  |                  |
-  |     [Enter]      |
-  +------------------+
-           |
-           v
-  +------------------+
-  | +--------------+ |
-  | | Title        | |
-  | | Year Runtime | |
-  | +--------------+ |
-  | ...              |
-  +------------------+
-  ```
-
-- **Strategy:**
-  B tree, hash map, ...
-
-- **Distribution of Responsibility and Roles:**
-
-  - All: Peer feedback
-  - Sean: User interface
-  - Isaac: Implementation
-  - Daniel: Tests
+```
+build/movie-search
+```
