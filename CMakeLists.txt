@@ -17,8 +17,8 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
-        data.cpp
-        data.h
+        movie-search.cpp
+        movie-search.h
 )
 
 target_link_libraries(MovieSearchUserInterface PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)

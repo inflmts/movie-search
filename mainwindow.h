@@ -14,8 +14,9 @@
 #include <QDialog>     // For the popup dialog
 #include <QDialogButtonBox>
 #include <QStringList>
-#include "data.h"
+#include "movie-search.h"
 
+/* Genre Selection Functionality */
 class GenreSelectionDialog : public QDialog
 {
     Q_OBJECT
@@ -28,6 +29,7 @@ private:
     QDialogButtonBox* buttonBox;
 };
 
+/* Main Window Functionality */
 class MainWindow : public QMainWindow
 {
     Q_OBJECT

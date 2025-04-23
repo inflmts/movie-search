@@ -16,11 +16,11 @@ qt5_ui = qt5.compile_ui(sources: qt5_ui_sources)
 qt5_moc = qt5.compile_moc(headers: qt5_moc_headers)
 
 sources = [
+  'main.cpp',
+  'mainwindow.cpp',
+  'movie-search.cpp',
   qt5_ui,
   qt5_moc,
-  'data.cpp',
-  'mainwindow.cpp',
-  'main.cpp',
 ]
 
 executable('movie-search', sources, dependencies: qt5_dep)

@@ -1,13 +1,14 @@
-#ifndef DATA_H
-#define DATA_H
+#ifndef MOVIE_SEARCH_H
+#define MOVIE_SEARCH_H
 
 #include <limits.h>
-#include <map>
 #include <string>
-#include <unordered_map>
 #include <vector>
 #include <QStringList>
+#include <map>
+#include <unordered_map>
 
+/* Movie object */
 struct Movie
 {
     std::string title;
@@ -21,6 +22,7 @@ struct Movie
         genre(_genre) {}
 };
 
+/* Search criteia object */
 struct Criteria
 {
     int min_year = INT_MIN;
@@ -30,6 +32,7 @@ struct Criteria
     QStringList genres;
 };
 
+/* General Movie Search Functionality */
 class MovieSearch
 {
 public:
@@ -38,6 +41,7 @@ public:
     virtual std::vector<const Movie*> search(const Criteria& criteria) = 0;
 };
 
+/* Vector - Linear Movie Search Functionality */
 class LinearMovieSearch: public MovieSearch
 {
 private:
@@ -47,6 +51,7 @@ public:
     virtual std::vector<const Movie*> search(const Criteria& criteria) override;
 };
 
+/* BTree Movie Search Functionality */
 class BTreeMovieSearch: public MovieSearch
 {
 private:
@@ -56,6 +61,7 @@ public:
     virtual std::vector<const Movie*> search(const Criteria& criteria) override;
 };
 
+/* HashMap Movie Search Funcitonality */
 class HashMapMovieSearch: public MovieSearch
 {
 private:
@@ -65,4 +71,4 @@ public:
     virtual std::vector<const Movie*> search(const Criteria& criteria) override;
 };
 
-#endif
+#endif // MOVIE_SEARCH_H
