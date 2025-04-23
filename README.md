@@ -23,7 +23,7 @@ curl -Lf https://datasets.imdbws.com/title.basics.tsv.gz \
 
 ### CMake
 
-_TODO - someone with CMake fill this out_
+_TODO 
 
 ### Meson
 
