@@ -13,10 +13,12 @@ The data can be found at <https://datasets.imdbws.com>.
 
 To get started, download and extract
 <https://datasets.imdbws.com/title.basics.tsv.gz>
-to a file named `movies.tsv` in the current directory:
+to a file named `movies.tsv` in the current directory, selecting only movies:
 
 ```
-curl -Lf https://datasets.imdbws.com/title.basics.tsv.gz | gunzip > movies.tsv
+curl -Lf https://datasets.imdbws.com/title.basics.tsv.gz \
+  | gunzip \
+  | grep -F "$(printf '\tmovie\t')" > movies.tsv
 ```
 
 ### CMake
